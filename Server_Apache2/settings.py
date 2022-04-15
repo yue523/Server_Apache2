@@ -36,7 +36,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # (重要)最初にアプリケーションディレクトリを記載する!!
     'App',
-
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'Server_Apache2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', #mysqlをデータベースとして使用することを指定
-        'NAME': 'sever_django', #データベース名
+        'NAME': 'server_apache', #データベース名
         'USER': 'yuki', #データベースを作成したユーザー名
         'PASSWORD': '4nr3Q3@c', #ログインするためのパスワード
     }
@@ -111,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'ja'
+LANGUAGE_CODE = 'ja-jp'
 
 TIME_ZONE = 'Asia/Tokyo'
 
@@ -119,6 +119,11 @@ USE_I18N = True
 
 USE_TZ = True
 
+# 静的ファイルの配置場所の追加
+
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR,'static'),
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
